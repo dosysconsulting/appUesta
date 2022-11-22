@@ -1,0 +1,10 @@
+dto\Apuesta.class
+bd\conexionBD.class
+dto\Dinero.class
+dto\Estudiante.class
+logica\principal.class
+operaciones\OperacionesEstudiante.class
+operaciones\Operaciones.class
+dto\Eventos.class
+logica\Apuesta.class
+dto\Cliente.class
