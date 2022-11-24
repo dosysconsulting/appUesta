@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8">
+<title>Registrar Cliente</title>
+<link rel="stylesheet"
+	href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+	integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+	crossorigin="anonymous">
+</head>
+<body>
+
+	
+	<nav class="navbar navbar-expand-md bg-dark navbar-dark">
+	<a class="navbar-brand" href="#">Control de clientes</a>
+		<div class="collapse navbar-collapse" id="collapsibleNavbar">
+			<ul class="navbar-nav">
+				<li class="nav-item">
+					<a class="nav-link" th:href="@{/clientes}">Control de clientes
+					</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" th:href="@{/apuesta}">Control de apuesta
+					</a>
+				</li>
+			</ul>
+		
+		</div>
+	</nav>
+
+	<br>
+	<div class="container">
+		<div class="row">
+			<div class="col-lg6-6 col-md-6 col-sm-6 container justify-content-center card">
+				<h1 class="text-center">Registro de apuestas</h1>
+				<div class="card-body">
+					<form th:action="@{/apuesta}" th:object="${apuesta}" method="POST">
+						<div class="form-group">
+							<label>Nombre apuesta</label>
+							<input type="text" name="nombre" th:field="*{nombre}" class="form-control" placeholder="Digite el nombre de la apuesta" required>
+						</div>
+						
+						<div class="form-group">
+							<label>Fecha inicio</label>
+							<input type="date" name="fecha_inicio" th:field="*{fecha_inicio}" class="form-control"  required>
+						</div>
+						<br>
+						<div class="form-group">
+							<label>Fecha fin</label>
+							<input type="date" name="fecha_fin" th:field="*{fecha_fin}" class="form-control"  required>
+						</div>
+						<br>
+						<div class="form-group">
+							<label>Estado</label>
+							<input type="text" name="estado" th:field="*{estado}" class="form-control" placeholder="Digite el estado V(VIGENTE) F(FINALIZADO)" minlength="1" maxlength="1" size="1" required>
+						</div>
+						<br>
+						
+						<div class="form-group">
+							<label>Equipo 1</label>
+							<input type="text" name="equipo1" th:field="*{equipo1}" class="form-control" placeholder="Digite el equipo 1" required>
+						</div>
+						<br>
+						<div class="form-group">
+							<label>Equipo 2</label>
+							<input type="text" name="equipo2" th:field="*{equipo2}" class="form-control" placeholder="Digite el equipo 2"  required>
+						</div>
+						
+						<br>
+						
+						<div class="form-group">
+							<label>Número apostadores</label>
+							<input type="number" name="num_apostadores" th:field="*{num_apostadores}" class="form-control" placeholder="Digite el numero de apostadores" required>
+						</div>
+						
+						<br>
+						
+						<div class="form-group">
+							<label>Valor máximo</label>
+							<input type="number" name="valor_maximo" th:field="*{valor_maximo}" class="form-control" placeholder="Digite el valor maximo apuesta" required>
+						</div>
+						
+						<div class="box-footer">
+							<button class="btn btn-success">Guardar</button>
+						
+						</div>
+					</form>			
+				</div>
+				
+			</div>
+		
+		</div>
+	</div>
+	
+</body>
+</html>
